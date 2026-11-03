@@ -88,7 +88,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 
 /* Hero */
 .hero{padding-block:clamp(28px,5vh,48px) 28px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.18fr;gap:40px;align-items:center}
 .hero h1 .display{font-size:clamp(42px,4.8vw,66px)}
 .hero h1 .display > span{color:var(--red)}
 .hero .copy{display:flex;flex-direction:column;gap:16px;min-width:0}
@@ -133,8 +133,9 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 @media (max-width:620px){.modules{grid-template-columns:1fr}}
 
 /* Feature rows */
-.feature{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center}
+.feature{display:grid;grid-template-columns:.72fr 1.28fr;gap:40px;align-items:center}
 .feature + .feature{margin-top:clamp(40px,7vh,64px)}
+.feature.flip{grid-template-columns:1.28fr .72fr}
 .feature.flip .text{order:2}
 .feature .text{display:flex;flex-direction:column;gap:12px;min-width:0}
 .feature h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(30px,3vw,40px);line-height:.95}
@@ -142,7 +143,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 .ticks li{padding-left:30px;position:relative;color:var(--ink-2)}
 .ticks li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:var(--red-wash);box-shadow:inset 0 0 0 5px var(--red-wash), inset 0 0 0 9px var(--red)}
 .ticks b{color:var(--ink)}
-@media (max-width:900px){.feature{grid-template-columns:1fr;gap:28px}.feature.flip .text{order:0}}
+@media (max-width:900px){.feature,.feature.flip{grid-template-columns:1fr;gap:28px}.feature.flip .text{order:0}}
 
 /* Audit tabs */
 .audit-wrap{display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:start}
@@ -156,7 +157,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 .step[aria-selected="true"]{background:var(--red);border-color:var(--red)}
 .step[aria-selected="true"] .n,.step[aria-selected="true"] .d{color:#fff}
 .stage{background:#1C1C1F;border-radius:16px;padding:14px;min-width:0;max-width:820px}
-.stage img{border-radius:10px;width:100%;height:auto;max-height:max(300px,calc(100vh - 250px));object-fit:contain;background:#fff}
+.stage img{border-radius:10px;width:100%;height:auto;max-height:max(320px,calc(100vh - 220px));object-fit:contain;background:#fff}
 .stage p{color:#CFCFD4;font-size:14px;margin-top:10px}
 @media (max-width:900px){.audit-wrap{grid-template-columns:1fr}.steps{flex-direction:row;overflow-x:auto;padding-bottom:6px}.step{min-width:220px}}
 
@@ -335,9 +336,16 @@ table.cmp tr:last-child th,table.cmp tr:last-child td{border-bottom:0}
 .tier li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:7px;border-left:3px solid var(--red);border-bottom:3px solid var(--red);transform:rotate(-45deg)}
 @media (max-width:900px){.tiers{grid-template-columns:1fr}}
 
-footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink-3);font-size:14px}
-.foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
-.foot img{height:38px;width:auto}
+footer{background:var(--ink);color:#BDBDC3;font-size:14px;padding-block:44px 0}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
+.foot .fb{display:flex;flex-direction:column;gap:12px;max-width:320px}
+.foot .fb img{height:40px;width:auto;align-self:flex-start;background:#fff;border-radius:10px;padding:6px 10px}
+.foot h4{margin:0 0 10px;color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.foot a{color:#BDBDC3;text-decoration:none}.foot a:hover{color:#fff}
+.fbar{margin-top:36px;border-top:1px solid #2C2C30;padding-block:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px;color:#8E8E95}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot{grid-template-columns:1fr}}
 </style>
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/favicon.png">
@@ -384,7 +392,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
         </div>
       </div>
       <div class="hero-visual">
-        <img class="shot" src="img/hero-scan.jpg" alt="AssetVisors Live Audit screen: 128 expected, 97 found, 29 missing, 2 misplaced, with each scanned asset’s result" width="1400" height="880">
+        <img class="shot" src="img/hero-scan.jpg" alt="AssetVisors Live Audit screen: 128 expected, 97 found, 29 missing, 2 misplaced, with each scanned asset’s result" width="960" height="537">
         <div class="badge b2"><span class="dot" aria-hidden="true"></span>NTX-0412 · Found</div>
         <div class="badge b1">City › Site › Building › Floor</div>
       </div>
@@ -484,7 +492,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>Value on every line.</b> Cost and net book value next to custodian and location.</li>
           </ul>
         </div>
-        <img class="shot" src="img/assets.jpg" alt="Assets register listing ID, asset, category, location, custodian, cost, net book value and status" width="1400" height="879">
+        <img class="shot" src="img/assets.jpg" alt="Assets register listing ID, asset, category, location, custodian, cost, net book value and status" width="960" height="600">
       </div>
       <div class="feature flip">
         <div class="text">
@@ -496,7 +504,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>History on record.</b> The location updates and the move joins the asset’s timeline.</li>
           </ul>
         </div>
-        <img class="shot" src="img/approvals.jpg" alt="Movement approvals: pending requests with Approve and Reject, decided requests with the approver’s note" width="1400" height="879">
+        <img class="shot" src="img/approvals.jpg" alt="Movement approvals: pending requests with Approve and Reject, decided requests with the approver’s note" width="960" height="481">
       </div>
       <div class="feature">
         <div class="text">
@@ -508,7 +516,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>Capitalise in one click.</b> Received items become assets with new IDs, ready to label.</li>
           </ul>
         </div>
-        <img class="shot" src="img/cwip.jpg" alt="In Progress screen: project lines with ordered and received quantities and a ready-to-capitalise banner" width="1400" height="879">
+        <img class="shot" src="img/cwip.jpg" alt="In Progress screen: project lines with ordered and received quantities and a ready-to-capitalise banner" width="960" height="449">
       </div>
       <div class="feature flip">
         <div class="text">
@@ -520,7 +528,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>Journals for Tally.</b> Capitalisation, depreciation, disposals and Ind AS 116 lease entries.</li>
           </ul>
         </div>
-        <img class="shot" src="img/reports.jpg" alt="Depreciation report by category with a Companies Act and Income Tax switch" width="1400" height="879">
+        <img class="shot" src="img/reports.jpg" alt="Depreciation report by category with a Companies Act and Income Tax switch" width="960" height="440">
       </div>
     </div>
   </section>
@@ -536,7 +544,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
       <div class="audit-wrap">
         <div class="steps" role="tablist" aria-label="Live Audit steps" id="steps"></div>
         <div class="stage" role="tabpanel" id="stage" aria-live="polite">
-          <img id="stageImg" src="img/audit-plan.jpg" alt="" width="1400" height="879">
+          <img id="stageImg" src="img/audit-plan.jpg" alt="" width="960" height="487">
           <p id="stageText"></p>
         </div>
       </div>
@@ -770,11 +778,14 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <img src="img/logo.png" alt="AssetVisors">
-    <span>© 2026 Fundvisors Consultancy Services Pvt. Ltd. · AssetVisors</span>
-    <span>support@fundvisors.com · +91 99538 79916</span>
-    <a href="https://app.assetvisors.in/login">Client login</a>
+  <div class="wrap">
+    <div class="foot">
+      <div class="fb"><img src="img/logo.png" alt="AssetVisors"><p>Pan-India asset verification, barcode, QR and RFID tagging, and asset audit software. Track. Manage. Protect.</p></div>
+      <div><h4>Platform</h4><ul><li><a href="#platform">Asset register</a></li><li><a href="#audit">Live Audit</a></li><li><a href="#people">Roles and access</a></li><li><a href="https://app.assetvisors.in/login">Client login</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Physical verification</a></li><li><a href="#services">Asset tagging</a></li><li><a href="#technology">Barcode and RFID</a></li><li><a href="#pricing">Engagement models</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>support@fundvisors.com</li><li>+91 99538 79916</li><li><a href="https://wa.me/919953879916" target="_blank" rel="noopener">WhatsApp chat</a></li><li>Pan-India field teams</li></ul></div>
+    </div>
+    <div class="fbar"><span>© 2026 Fundvisors Consultancy Services Pvt. Ltd.</span><span>AssetVisors is a product of Fundvisors</span></div>
   </div>
 </footer>
 
