@@ -42,6 +42,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{overflow-x:clip}
+section[id]{scroll-margin-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
@@ -483,7 +484,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>Value on every line.</b> Cost and net book value next to custodian and location.</li>
           </ul>
         </div>
-        <img class="shot" src="img/assets.jpg" alt="Assets register listing ID, asset, category, location, custodian, cost, net book value and status" loading="lazy" width="1400" height="879">
+        <img class="shot" src="img/assets.jpg" alt="Assets register listing ID, asset, category, location, custodian, cost, net book value and status" width="1400" height="879">
       </div>
       <div class="feature flip">
         <div class="text">
@@ -495,7 +496,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>History on record.</b> The location updates and the move joins the asset’s timeline.</li>
           </ul>
         </div>
-        <img class="shot" src="img/approvals.jpg" alt="Movement approvals: pending requests with Approve and Reject, decided requests with the approver’s note" loading="lazy" width="1400" height="879">
+        <img class="shot" src="img/approvals.jpg" alt="Movement approvals: pending requests with Approve and Reject, decided requests with the approver’s note" width="1400" height="879">
       </div>
       <div class="feature">
         <div class="text">
@@ -507,7 +508,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>Capitalise in one click.</b> Received items become assets with new IDs, ready to label.</li>
           </ul>
         </div>
-        <img class="shot" src="img/cwip.jpg" alt="In Progress screen: project lines with ordered and received quantities and a ready-to-capitalise banner" loading="lazy" width="1400" height="879">
+        <img class="shot" src="img/cwip.jpg" alt="In Progress screen: project lines with ordered and received quantities and a ready-to-capitalise banner" width="1400" height="879">
       </div>
       <div class="feature flip">
         <div class="text">
@@ -519,7 +520,7 @@ footer{border-top:1px solid var(--line);padding-block:32px 104px;color:var(--ink
             <li><b>Journals for Tally.</b> Capitalisation, depreciation, disposals and Ind AS 116 lease entries.</li>
           </ul>
         </div>
-        <img class="shot" src="img/reports.jpg" alt="Depreciation report by category with a Companies Act and Income Tax switch" loading="lazy" width="1400" height="879">
+        <img class="shot" src="img/reports.jpg" alt="Depreciation report by category with a Companies Act and Income Tax switch" width="1400" height="879">
       </div>
     </div>
   </section>
